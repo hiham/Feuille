@@ -63,7 +63,6 @@ export default {
           name: sheet.name,
           sharedAuthorCount: sheet.sharedAuthor.length
         }))
-        // Do something with the fetched data
         console.log('Personal Sheets:', sheetLists.PERSONAL)
         console.log('Shared Sheets:', sheetLists.SHARED)
       } catch (error) {
