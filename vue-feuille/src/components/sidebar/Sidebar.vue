@@ -9,6 +9,31 @@ export default {
   name: 'vue-SideBar',
   setup() {
     return { collapsed, toggleSidebar, sidebarWidth }
+  },
+  computed: {
+    currentUser() {
+      return this.$store.state.auth.user
+    },
+    showAdminBoard() {
+      if (this.currentUser && this.currentUser['roles']) {
+        return this.currentUser['roles'].includes('ROLE_ADMIN')
+      }
+
+      return false
+    },
+    showModeratorBoard() {
+      if (this.currentUser && this.currentUser['roles']) {
+        return this.currentUser['roles'].includes('ROLE_MODERATOR')
+      }
+
+      return false
+    }
+  },
+  methods: {
+    logOut() {
+      this.$store.dispatch('auth/logout')
+      this.$router.push('/login')
+    }
   }
 }
 </script>
@@ -24,11 +49,23 @@ export default {
       <span v-else><i class="fas fa-leaf"></i> Feuille</span>
     </h1>
 
-    <SidebarLink to="/" icon="fas fa-columns">Dashboard</SidebarLink>
-    <SidebarLink to="/" icon="fa-solid fa-list">Sheets</SidebarLink>
-    <SidebarLink to="/" icon="fas fa-project-diagram">New Sheets</SidebarLink>
-    <SidebarLink to="/" icon="fas fa-tools">Settings</SidebarLink>
-    <SidebarLink to="/register" icon="fas fa-users">Login</SidebarLink>
+    <SidebarLink to="/home" icon="fas fa-columns">Dashboard</SidebarLink>
+    <SidebarLink to="/sheetsList" icon="fa-solid fa-list" v-if="currentUser">Sheets</SidebarLink>
+    <SidebarLink to="/sheetsForm" icon="fas fa-project-diagram" v-if="currentUser"
+      >New Sheets</SidebarLink
+    >
+    <SidebarLink to="/admin" icon="fas fa-tools" v-if="showAdminBoard">Settings</SidebarLink>
+    <SidebarLink to="/login" icon="fa-solid fa-right-to-bracket" v-if="!currentUser"
+      >Login</SidebarLink
+    >
+    <SidebarLink to="/register" icon="fas fa-users" v-if="!currentUser">Register</SidebarLink>
+
+    <template v-if="currentUser">
+      <SidebarLink to="/profile" icon="fas fa-user"> {{ currentUser.username }} </SidebarLink>
+      <SidebarLink to="/home" @click.prevent="logOut" icon="fas fa-sign-out-alt"
+        >LogOut</SidebarLink
+      >
+    </template>
 
     <span class="collapse-icon" :class="{ 'rotate-180': collapsed }" @click="toggleSidebar">
       <i class="fas fa-angle-double-left" />
@@ -85,5 +122,4 @@ export default {
   transform: rotate(180deg);
   transition: 0.2s linear;
 }
-
 </style>

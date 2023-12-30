@@ -2,8 +2,8 @@
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from "@/router/index"
-import store from '@/stores/counter'
+import router from "@/router/router"
+import store from '@/stores/index'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueLogger from 'vuejs3-logger'
 import VueExcelEditor from 'vue3-excel-editor'

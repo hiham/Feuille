@@ -4,14 +4,38 @@
       <div class="double-box">
         <div class="outer-box"></div>
         <div class="inner-box">
-          <h2 class="card-title">Feuille</h2>
+          <h2 class="card-title">{{ content }}</h2>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script>
+import UserService from '../services/user.service'
+
+export default {
+  name: 'Feuille',
+  data() {
+    return {
+      content: ''
+    }
+  },
+  mounted() {
+    UserService.getPublicContent().then(
+      (response) => {
+        this.content = response.data
+      },
+      (error) => {
+        this.content =
+          (error.response && error.response.data && error.response.data.message) ||
+          error.message ||
+          error.toString()
+      }
+    )
+  }
+}
+</script>
 
 <style scoped>
 .dashboard {
