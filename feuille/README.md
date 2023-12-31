@@ -7,11 +7,11 @@ Backend du serveur
 Mysql a été utilié dans le cadre du projet. Il faudra s'assurer que MYSQL est
 installe sur votre machine. Tout ce fait localement.Les feuilles sont sauvegardées dans `sheets.JSON` .
 
-Les utilsateurs de base sont :
->Username : admin
+Les utilsateurs de base sont :<br />
+>Username : admin<br />
 >Mdp : 123456
 
->Username : hiham
+>Username : hiham<br />
 >Mdp : 123456
 
 A chaque redémarage du serveur , les nouveaux utilisatuers sont ecrasés. Les feuilles par contre restes sauvegardées dans le JSON.
