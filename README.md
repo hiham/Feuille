@@ -22,11 +22,11 @@
 
 ## Fonctionnalite demandées
 
-* Persistance des données : `Utilisateur : MYSQL` `Feuille : JSON`
-* Partage d’un document sauvegardé avec d’autres utilisateurs :
+* Persistance des données : <br /> `Utilisateur : MYSQL` `Feuille : JSON`
+* Partage d’un document sauvegardé avec d’autres utilisateurs : <br />
 On peut acceder à un ficher partage avec nous , le modifier et le sauvegarder.
 La suppression est réservée au propriétaire du document.
-* Affichage des utilisateurs travaillant simultanément sur le même document :
+* Affichage des utilisateurs travaillant simultanément sur le même document : <br />
 Seulement les utilisateurs dont les feuilles sont partagées apparaissent dans la liste, en tooltip.
 
 ## Plus d'info
