@@ -10,14 +10,14 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup ( pensez a installer les dependances manquantes)
+## Project Setup ( pensez à installer les dépendances manquantes)
 
 ```sh
 npm install
 npm instal nomDependence
 ```
 
-### Lancer le serveur FrontEnd a l'adresse http://localhost:5173
+### Lancez le serveur FrontEnd à l'adresse http://localhost:5173
 
 ```sh
 npm run dev
