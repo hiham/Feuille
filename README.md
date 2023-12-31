@@ -5,7 +5,7 @@
 
 ## Fonctionnalite de Base
 
-— Création d’un compte
+* Création d’un compte
 — Connexion
 
 > Ces deux fonctionalites on été `fortement` inspiré du guide [Link](https://www.bezkoder.com/node-express-vue-jwt-auth/). Pas le temps de réeinventer la roue .
