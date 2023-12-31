@@ -31,5 +31,5 @@ Seulement les utilisateurs dont les feuilles sont partagées apparaissent dans l
 
 ## Plus d'info
 Le projet a été fait un peu à la va vite en vu d'un manque d'organisation.Seulement les fonctionalités de base ont été implementées avec certaines fonctionnalites demandées.
-Le JSON est alimenté de feuille pour faciliter l'utilisation du site.On utilise le systeme de stockage local de chrome pour garder la persistence de l'usager 
+Le JSON est alimenté de feuillea pour faciliter l'utilisation du site.On utilise le systeme de stockage local de chrome pour garder la persistence de l'usager 
 connecté.
