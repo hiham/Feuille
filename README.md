@@ -30,6 +30,6 @@ La suppression est réservée au propriétaire du document.
 Seulement les utilisateurs dont les feuilles sont partagées apparaissent dans la liste, en tooltip.
 
 ## Plus d'info
-Le projet a été fait un peu à la va vite en vu d'un manque d'organisation.Seulement les fonctionalités de base ont été implementées avec certaines fonctionnalites demandées
-implementées. Le JSON est alimenté de feuille pour faciliter l'utilisation du site.On utilise le systeme de stockage local de chrome pour garder la persistence de l'usager 
+Le projet a été fait un peu à la va vite en vu d'un manque d'organisation.Seulement les fonctionalités de base ont été implementées avec certaines fonctionnalites demandées.
+Le JSON est alimenté de feuille pour faciliter l'utilisation du site.On utilise le systeme de stockage local de chrome pour garder la persistence de l'usager 
 connecté.
