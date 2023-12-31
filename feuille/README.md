@@ -14,7 +14,7 @@ Les utilsateurs de base sont :<br />
 >Username : hiham<br />
 >Mdp : 123456
 
-A chaque redémarage du serveur , les nouveaux utilisatuers sont ecrasés. Les feuilles par contre restes sauvegardées dans le JSON.
+A chaque redémarage du serveur , les nouveaux utilisatuers sont ecrasés. Les feuilles par contre restent sauvegardées dans le JSON.
 
 ## Project Setup
 
