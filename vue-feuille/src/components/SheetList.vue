@@ -11,7 +11,13 @@
       </div>
       <ul v-if="showsheetList.PERSONAL" class="sheet-items">
         <li v-for="sheet in sheetLists.PERSONAL" :key="sheet.id" class="sheet-card">
-          Name : {{ sheet }}
+          Name : {{ sheet.name }}
+          <router-link :to="`/sheet/${sheet.id}`" class="icon-link"
+            ><i class="fas fa-search"></i
+          ></router-link>
+          <button @click="deleteSheet(sheet.id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
         </li>
       </ul>
     </div>
@@ -28,6 +34,13 @@
       <ul v-if="showsheetList.SHARED" class="sheet-items">
         <li v-for="sheet in sheetLists.SHARED" :key="sheet.id" class="sheet-card">
           Name : {{ sheet.name }} | Shared Author : {{ sheet.sharedAuthorCount }}
+          <router-link :to="`/sheet/${sheet.id}`" class="icon-link"
+            ><i class="fas fa-search"></i
+          ></router-link>
+          <div class="tooltip">
+            <i class="fa-solid fa-people-group"></i>
+            <span class="tooltiptext">{{ sheet.sharedAuthor }}</span>
+          </div>
         </li>
       </ul>
     </div>
@@ -55,13 +68,19 @@ export default {
     }
 
     async function fetchData() {
+      const user = JSON.parse(localStorage.getItem('user'))
       try {
-        const personalSheets = await FeuilleService.getSheetsByAuthor('B')
-        const sharedSheets = await FeuilleService.getSharedSheets('C')
-        sheetLists.PERSONAL = personalSheets.data.map((sheet) => sheet.name)
+        const personalSheets = await FeuilleService.getSheetsByAuthor(user.username)
+        const sharedSheets = await FeuilleService.getSharedSheets(user.username)
+        sheetLists.PERSONAL = personalSheets.data.map((sheet) => ({
+          name: sheet.name,
+          id: sheet.id
+        }))
         sheetLists.SHARED = sharedSheets.data.map((sheet) => ({
           name: sheet.name,
-          sharedAuthorCount: sheet.sharedAuthor.length
+          sharedAuthorCount: sheet.sharedAuthor.length,
+          id: sheet.id,
+          sharedAuthor: sheet.sharedAuthor
         }))
         console.log('Personal Sheets:', sheetLists.PERSONAL)
         console.log('Shared Sheets:', sheetLists.SHARED)
@@ -78,6 +97,20 @@ export default {
       sheetLists,
       showsheetList,
       togglesheetList
+    }
+  },
+  methods: {
+    async deleteSheet(sheetId) {
+      try {
+        await FeuilleService.deleteSheet(sheetId)
+        const indexToDelete = this.sheetLists.PERSONAL.findIndex((sheet) => sheet.id === sheetId)
+        if (indexToDelete !== -1) {
+          this.sheetLists.PERSONAL.splice(indexToDelete, 1)
+        }
+        console.log(`Sheet with ID ${sheetId} deleted successfully`)
+      } catch (error) {
+        console.error('Error deleting sheet:', error)
+      }
     }
   }
 }
@@ -167,5 +200,29 @@ export default {
 
 .icon-link {
   margin-right: 10px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000080;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: relative;
+  z-index: 1;
+  top: 100%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
 }
 </style>

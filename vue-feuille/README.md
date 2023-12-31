@@ -1,4 +1,4 @@
-#  vue-feuille
+# vue-feuille
 
 This template should help get you started developing with Vue 3 in Vite.
 
@@ -10,26 +10,39 @@ This template should help get you started developing with Vue 3 in Vite.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-## Project Setup
+## Project Setup ( pensez a installer les dependances manquantes)
 
 ```sh
 npm install
+npm instal nomDependence
 ```
 
-### Compile and Hot-Reload for Development
+### Lancer le serveur FrontEnd a l'adresse http://localhost:5173
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+## Route frontend
 
-```sh
-npm run build
-```
+> Route de base
 
-### Lint with [ESLint](https://eslint.org/)
+- / : route pour le menu principal
+- /home : route pour le menu principal
 
-```sh
-npm run lint
-```
+> Route de pour l'utilisateur
+
+- /profile : route pour le profile
+- /user : route test pour le contenu usager
+- /admin : route test pour le contenu admin
+
+  > Route auhtentification
+
+- /register : route pour se creer un compte
+- /login : route pour se connecter
+
+> Route pour les feuilles
+
+- /sheetsForm : route pour creer une feuille
+- /sheetsListe : route recuperer les feuilles. Actions supplementaire sur la page (acceder et supprimer une feuille en particulier)
+- /sheet/:id : route pour recuperer une feuille en fonction de l'id

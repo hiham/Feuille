@@ -1,18 +1,18 @@
-import http from "../http-common";
-import authHeader from './auth-header';
+import http from '../http-common'
+import authHeader from './auth-header'
 
 class UserService {
   getPublicContent() {
-    return http.get('/api/test/all');
+    return http.get('/api/test/all')
   }
 
   getUserBoard() {
-    return http.get('/api/test/user', { headers: authHeader() });
+    return http.get('/api/test/user', { headers: authHeader() })
   }
 
   getAdminBoard() {
-    return http.get('/api/test/admin', { headers: authHeader() });
+    return http.get('/api/test/admin', { headers: authHeader() })
   }
 }
 
-export default new UserService();
+export default new UserService()
