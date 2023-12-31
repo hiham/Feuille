@@ -1,6 +1,6 @@
 # Feuille
- ProjetDp Rapport
- Frontend : Vue 3 (Utiliser car antécedent avec le framework )
+ ProjetDp Rapport<br />
+ Frontend : Vue 3 (Utiliser car antécedent avec le framework )<br />
  Backend :  Express (Utiliser car le cours )
 
 ## Fonctionnalite de Base
