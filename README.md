@@ -16,7 +16,7 @@
 * Sauvegarde d’un document
 * Suppression d’un document
 
-> Le reste des fonctionalités n'ont pas posé de probleme en particulier vu qu'il y avait des antécedent avec les framework concernés.
+> Le reste des fonctionalités n'ont pas posé de probleme en particulier, vu qu'il y avait des antécedent avec les framework concernés.
 > L'usage de JSON est juste un choix de facilité pour la persistence des données.
 > On reste dans un modele classique de conception fullstack avec les routes , les controlleurs , les services et les vues.
 
