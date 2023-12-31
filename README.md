@@ -23,8 +23,8 @@
 ## Fonctionnalite demandées
 
 * Persistance des données,
-Utilisateur : BDD MYSQL
-Feuille : JSON
+* *Utilisateur : BDD MYSQL
+* *Feuille : JSON
 * Partage d’un document sauvegardé avec d’autres utilisateurs :
 On peut acceder à un ficher partage avec nous , le modifier et le sauvegarder.
 La suppression est réservée au propriétaire du document.
