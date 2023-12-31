@@ -27,22 +27,22 @@ npm run dev
 
 > Route de base
 
-- / : route pour le menu principal
-- /home : route pour le menu principal
+- */* : route pour le menu principal
+- */home* : route pour le menu principal
 
 > Route de pour l'utilisateur
 
-- /profile : route pour le profile
-- /user : route test pour le contenu usager
-- /admin : route test pour le contenu admin
+- */profile* : route pour le profile
+- */user* : route test pour le contenu usager
+- */admin* : route test pour le contenu admin
 
   > Route auhtentification
 
-- /register : route pour se creer un compte
-- /login : route pour se connecter
+- */register* : route pour se creer un compte
+- */login* : route pour se connecter
 
 > Route pour les feuilles
 
-- /sheetsForm : route pour creer une feuille
-- /sheetsListe : route recuperer les feuilles. Actions supplementaire sur la page (acceder et supprimer une feuille en particulier)
-- /sheet/:id : route pour recuperer une feuille en fonction de l'id
+- */sheetsForm* : route pour creer une feuille
+- */sheetsListe* : route recuperer les feuilles. Actions supplementaire sur la page (acceder et supprimer une feuille en particulier)
+- */sheet/:id* : route pour recuperer une feuille en fonction de l'id
